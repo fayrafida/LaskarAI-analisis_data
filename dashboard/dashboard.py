@@ -102,7 +102,7 @@ st.markdown("""
 
 # Membaca semua file data
 try:
-    path = r'../data/'
+    path = r'..\data\'
     files = [f for f in listdir(path) if isfile(join(path, f))]
 except:
     st.write('It didn\'t work with back slashes.')
