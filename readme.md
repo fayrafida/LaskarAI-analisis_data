@@ -35,5 +35,6 @@
 
 Jalankan perintah berikut di terminal:
 	```bash
-	streamlit run dashboard.py
+ 
+ 	streamlit run dashboard.py
 	```
