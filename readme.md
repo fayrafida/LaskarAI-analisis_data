@@ -34,6 +34,6 @@
 ## Menjalankan Aplikasi Dashboard
 
 Jalankan perintah berikut di terminal:
-	```bash
+```bash
 	streamlit run dashboard.py
-	```
+```
