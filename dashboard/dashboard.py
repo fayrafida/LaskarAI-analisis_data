@@ -1,4 +1,5 @@
 import streamlit as st
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 from os import listdir
@@ -100,17 +101,11 @@ st.markdown("""
     <h1 style='text-align: center; color: #4CAF50;'>Dicoding Air Quality Dashboard</h1>
 """, unsafe_allow_html=True)
 
+# Membaca parent directory dari file dashboard
+BASE_DIR = Path(__file__).resolve().parent.parent 
 # Membaca semua file data
-try:
-    path = r'..\\data\\'
-    files = [f for f in listdir(path) if isfile(join(path, f))]
-except:
-    st.write('It didn\'t work with back slashes.')
-try:
-    path = r'../data/'
-    files = [f for f in listdir(path) if isfile(join(path, f))]
-except:
-    st.write('It didn\'t work with forward slashes.')
+path = BASE_DIR/'data'
+files = [f for f in listdir(path) if isfile(join(path, f))]
 ls = []
 for filename in files:
   df = pd.read_csv(join(path, filename), index_col=None, header=0)
