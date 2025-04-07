@@ -101,8 +101,16 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Membaca semua file data
-path = '/data/'
-files = [f for f in listdir(path) if isfile(join(path, f))]
+try:
+    path = r'/data/'
+    files = [f for f in listdir(path) if isfile(join(path, f))]
+except:
+    print('It didn\'t work with back slashes.')
+try:
+    path = r'/data/'
+    files = [f for f in listdir(path) if isfile(join(path, f))]
+except:
+    print('It didn\'t work with forward slashes.')
 ls = []
 for filename in files:
   df = pd.read_csv(join(path, filename), index_col=None, header=0)
