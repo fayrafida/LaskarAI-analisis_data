@@ -101,7 +101,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Membaca semua file data
-path = '../data/'
+path = '/data/'
 files = [f for f in listdir(path) if isfile(join(path, f))]
 ls = []
 for filename in files:
